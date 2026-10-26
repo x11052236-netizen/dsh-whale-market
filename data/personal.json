@@ -1,0 +1,56 @@
+{
+  "title": {
+    "zh": "鲸市 · 自己的插件市场",
+    "en": "Whale Market"
+  },
+  "description": {
+    "zh": "聚合公共插件目录，也收自己的本地插件；搜索、分类、一键安装/更新/卸载。",
+    "en": "A personal plugin market for DSH: aggregates public indexes and local plugins, with search, categories, and one-click install."
+  },
+  "plugins": [
+    {
+      "name": "dsh-bili-whale",
+      "emoji": "🐋",
+      "title": {
+        "zh": "养鱼（B 站）",
+        "en": "Bili Whale"
+      },
+      "description": {
+        "zh": "让你自己的 DSH 养一条有日子的鱼：按作息刷 B 站、看懂视频、写两本日记，把值得的 @ 你。设置入口在「设置 → 养鱼」。",
+        "en": "A whale that browses Bilibili on its own schedule, understands videos, keeps two diaries, and mentions you when something is worth it."
+      },
+      "note": "你自己的插件，本地目录 link 安装；重启 DSH 后出现在「设置 → 养鱼」。",
+      "category": "personal",
+      "featured": 1,
+      "localPath": "D:/AI/06-工具脚本/dsh-bili-whale",
+      "versions": [
+        {
+          "version": "0.3.0",
+          "source": { "type": "link", "path": "D:/AI/06-工具脚本/dsh-bili-whale" }
+        }
+      ]
+    },
+    {
+      "name": "coopanion-connector-dsh",
+      "emoji": "🐾",
+      "title": {
+        "zh": "Coopanion 桌宠桥",
+        "en": "Coopanion Connector"
+      },
+      "description": {
+        "zh": "把 Coopanion 桌宠接到 DeepSeek Harness：一条本机 WebSocket 汇报回合、审批和回复，也把桌宠的话送回会话。",
+        "en": "Bridge between the Coopanion desktop pet and DSH over one loopback WebSocket."
+      },
+      "note": "你自己的桌宠桥接插件；已经从 GitHub 安装过，这里用于重装/统一管理。",
+      "category": "personal",
+      "featured": 2,
+      "repository": { "url": "https://github.com/blacksunshy/coopanion-connector-dsh" },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": { "type": "git", "url": "https://github.com/blacksunshy/coopanion-connector-dsh.git" }
+        }
+      ]
+    }
+  ]
+}

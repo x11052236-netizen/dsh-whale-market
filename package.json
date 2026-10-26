@@ -1,0 +1,40 @@
+{
+  "name": "dsh-whale-market",
+  "version": "0.1.0",
+  "description": "鲸市 —— 给 DeepSeek Harness 自己用的插件市场：聚合公共插件目录，支持搜索、分类、一键安装/更新/卸载，并把你的本地插件也收进来。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "marketplace",
+    "plugin-manager"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "data",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/host.test.mjs test/remote.test.mjs",
+    "build:curated": "node tools/build-curated.mjs",
+    "preview:mock": "node tools/make-preview-mock.mjs"
+  },
+  "license": "MIT"
+}

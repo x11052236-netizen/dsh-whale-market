@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="鲸市：给 DeepSeek Harness 自己用的在线插件市场。精选、公共目录和本地插件放在一个地方。">
+  <title>鲸市 · DeepSeek Harness 插件市场</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <span class="logo">鲸</span>
+      <span class="brand-text"><strong>鲸市</strong><small>WHALE MARKET</small></span>
+    </a>
+    <nav class="topnav">
+      <a href="#plugins">插件</a>
+      <a id="repo-link" href="#" target="_blank" rel="noreferrer noopener">GitHub ↗</a>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="切换主题">◐</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">DEEPSEEK HARNESS · PLUGIN MARKET</p>
+        <h1>给 DSH 自己用的<br><span>在线插件市场</span></h1>
+        <p class="lede">精选、公共目录和本地插件放在一个地方。搜索、看详情、复制安装命令；在 DSH 里也可以直接一键安装。</p>
+        <div class="stats">
+          <span><b id="stat-curated">—</b> 精选</span>
+          <span><b id="stat-total">—</b> 收录</span>
+          <span><b id="stat-updated">—</b> 更新</span>
+        </div>
+      </div>
+      <div class="install-card">
+        <div class="install-title">把鲸市装进 DSH</div>
+        <p>在 DSH 里打开「插件 → 鲸市」，或直接复制：</p>
+        <div class="command">
+          <code id="plugin-command">dsh plugin --profile desktop add github:blacksunshy/dsh-whale-market</code>
+          <button id="copy-plugin" class="small-btn" type="button">复制</button>
+        </div>
+        <p class="muted small">装完重启 DSH；首次打开会自动拉取这份在线目录。</p>
+      </div>
+    </section>
+
+    <section id="plugins" class="plugins">
+      <div class="controls">
+        <label class="search">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="搜插件名、作者、关键词…" autocomplete="off" spellcheck="false">
+          <button id="clear-search" class="clear" type="button" aria-label="清空">×</button>
+        </label>
+        <select id="sort" class="select" aria-label="排序">
+          <option value="recommended">推荐</option>
+          <option value="latest">最新发布</option>
+          <option value="name">按名称</option>
+        </select>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="result-line">
+        <span id="result-count">正在读取在线目录…</span>
+        <span id="source-line" class="muted"></span>
+      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+      <div class="empty" id="empty" hidden>
+        <h3>没有找到匹配的插件</h3>
+        <p>换个关键词，或把筛选清掉。</p>
+        <button id="reset" class="small-btn" type="button">清空筛选</button>
+      </div>
+      <div class="more-wrap">
+        <button id="more" class="more" type="button" hidden>加载更多</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>目录内容是社区数据，不代表审计或背书；安装前请确认来源。</span>
+    <span id="footer-meta"></span>
+  </footer>
+
+  <div class="overlay" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" type="button" aria-label="关闭">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

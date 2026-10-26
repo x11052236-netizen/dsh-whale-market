@@ -1,0 +1,13 @@
+# ============================================================================
+# dsh-whale-market —— 鲸市 · 插件市场
+# ============================================================================
+# 安装（本地开发，link 到源码目录）：
+#   dsh plugin --profile desktop add "link:C:\path\to\dsh-whale-market"
+#
+# dsh plugin 会自动把 dsh-whale-market 加进 profile package.json 的
+# dsh.profile.bundles；重启 DSH 后入口在侧边栏「插件」页的「鲸市」标签。
+# ============================================================================
+
+- insert:
+    - id: dsh-whale-market
+      name: dsh-whale-market

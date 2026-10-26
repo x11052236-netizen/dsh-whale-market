@@ -1,0 +1,4 @@
+node_modules/
+test/preview/*.png
+test/preview/mock-data.js
+*.log
