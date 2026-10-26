@@ -28,6 +28,12 @@ const pair = (value) => {
   return { zh: '', en: '' }
 }
 
+const clipPair = (value, max) => {
+  const p = pair(value)
+  const clip = (text) => (text.length > max ? `${text.slice(0, max)}…` : text)
+  return { zh: clip(p.zh), en: clip(p.en) }
+}
+
 function normalizeVersion(name, raw) {
   if (!raw || typeof raw.version !== 'string' || !raw.version.trim()) return undefined
   const source = raw.source && typeof raw.source === 'object' ? raw.source : { type: 'npm' }
@@ -55,8 +61,8 @@ function normalize(raw) {
   const category = String(raw.category ?? meta.category ?? 'tools')
   return {
     name: raw.name,
-    title: pair(raw.title),
-    description: pair(raw.description),
+    title: clipPair(raw.title, 200),
+    description: clipPair(raw.description, 600),
     homepage: typeof raw.homepage === 'string' ? raw.homepage : undefined,
     repository: raw.repository && typeof raw.repository === 'object' ? {
       url: typeof raw.repository.url === 'string' ? raw.repository.url : undefined,
@@ -68,7 +74,7 @@ function normalize(raw) {
       labels: (Array.isArray(raw.labels) ? raw.labels : Array.isArray(meta.labels) ? meta.labels : []).map((l) => clean(l, 40)).filter(Boolean).slice(0, 20),
     },
     versions,
-    ...(raw.note ? { note: clean(raw.note, 500) } : {}),
+    ...(raw.note ? { note: clean(raw.note, 300) } : {}),
     ...(Number.isFinite(raw.featured) ? { featured: Number(raw.featured) } : {}),
     ...(raw.emoji ? { emoji: clean(raw.emoji, 8) } : {}),
     ...(raw.personal ? { personal: true } : {}),

@@ -22,7 +22,7 @@
 
 除了插件里的「鲸市」标签，这个仓库还带一个**真正部署在公网的静态市场**：
 
-> **https://blacksunshy.github.io/dsh-whale-market/**
+> **https://x11052236-netizen.github.io/dsh-whale-market/**
 
 ![在线市场](docs/site.png)
 
@@ -40,11 +40,11 @@ node scripts/serve-site.mjs     # http://127.0.0.1:4173/
 
 ### 部署到自己的 GitHub Pages
 
-1. 在 GitHub 建一个空仓库，例如 `blacksunshy/dsh-whale-market`（public）。
+1. 在 GitHub 建一个空仓库，例如 `x11052236-netizen/dsh-whale-market`（public）。
 2. 把本目录推到 `main`。
 3. 仓库 **Settings → Pages → Build and deployment → Source** 选 **GitHub Actions**。
 4. 推一次代码（或手动运行 `Deploy whale market` workflow），等 Pages 部署完成。
-5. 如果用户名/仓库名不是 `blacksunshy/dsh-whale-market`，改 `market.config.json` 和
+5. 如果用户名/仓库名不是 `x11052236-netizen/dsh-whale-market`，改 `market.config.json` 和
    `lib/index.js` 里的 `WHALE_SITE_URL`，再推一次。
 
 第一次 push 时 Git Credential Manager 会让你登录 GitHub；登录一次之后就能一直推。
@@ -57,7 +57,7 @@ node scripts/serve-site.mjs     # http://127.0.0.1:4173/
 
 ```bash
 # A. 在线装（仓库推到 GitHub 之后）
-dsh plugin --profile desktop add github:blacksunshy/dsh-whale-market
+dsh plugin --profile desktop add github:x11052236-netizen/dsh-whale-market
 
 # B. 本地目录 link（开发时用）
 dsh plugin --profile desktop add "link:C:\Users\<你>\Documents\deepseek-harness\default-workspace\dsh-whale-market"
@@ -96,7 +96,7 @@ dsh plugin --profile desktop remove dsh-whale-market
 
 一个市场就是一个 **format 1** JSON 文件。鲸市默认先读：
 
-1. `https://blacksunshy.github.io/dsh-whale-market/index.json`（鲸市在线）
+1. `https://x11052236-netizen.github.io/dsh-whale-market/index.json`（鲸市在线）
 2. `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json`（公共目录）
 3. `https://dshmarket.com/index.json`（公共目录备用）
 
@@ -232,6 +232,18 @@ dsh-whale-market/
 - **没有签名校验**：目录里的版本号是目录作者的声明；真正装上的 manifest 才作数。
 - **图标是生成的**：不请求远程图片，所以视觉上比带图标的目录朴素一些。
 
+## 版权与归属
+
+- 这是一个**非官方**项目，与 GitHub、DeepSeek、DeepSeek Harness 及目录中的插件作者没有隶属或背书关系。
+- 公共目录数据来自 [`dsh-plugin-catalog`](https://www.npmjs.com/package/dsh-plugin-catalog)（npm 包声明 **CC0-1.0**），
+  上游是 [`awesome-dsh-plugin`](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)。
+- 插件**代码**不随本仓库分发；安装命令从 npm / GitHub 拉取，适用各插件自己的许可证。
+- 在线站只展示名称、简短描述、仓库链接和安装命令，文字过长会截断并保留源码链接。
+- 作者要求更正/下架：见 [NOTICE.md](NOTICE.md) 的 Issues 入口。
+
+> 以上是工程上的合规整理，不构成法律建议；如果要做商业化或大规模再分发，建议再咨询专业意见。
+
 ## License
 
 MIT
+

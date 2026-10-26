@@ -1,10 +1,10 @@
 {
-  "owner": "blacksunshy",
+  "owner": "x11052236-netizen",
   "repo": "dsh-whale-market",
   "branch": "main",
-  "siteUrl": "https://blacksunshy.github.io/dsh-whale-market/",
-  "indexUrl": "https://blacksunshy.github.io/dsh-whale-market/index.json",
-  "pluginInstall": "github:blacksunshy/dsh-whale-market",
+  "siteUrl": "https://x11052236-netizen.github.io/dsh-whale-market/",
+  "indexUrl": "https://x11052236-netizen.github.io/dsh-whale-market/index.json",
+  "pluginInstall": "github:x11052236-netizen/dsh-whale-market",
   "publicIndexes": [
     "https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json",
     "https://dshmarket.com/index.json"
