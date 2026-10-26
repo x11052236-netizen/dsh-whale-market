@@ -96,9 +96,10 @@ dsh plugin --profile desktop remove dsh-whale-market
 
 一个市场就是一个 **format 1** JSON 文件。鲸市默认先读：
 
-1. `https://x11052236-netizen.github.io/dsh-whale-market/index.json`（鲸市在线）
-2. `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json`（公共目录）
-3. `https://dshmarket.com/index.json`（公共目录备用）
+1. `https://cdn.jsdelivr.net/gh/x11052236-netizen/dsh-whale-market@main/site/index.json`（jsDelivr 仓库镜像，国内通常更快）
+2. `https://x11052236-netizen.github.io/dsh-whale-market/index.json`（鲸市在线 Pages）
+3. `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json`（公共目录）
+4. `https://dshmarket.com/index.json`（公共目录备用）
 
 抓不到在线鲸市时（比如还没部署），会自动继续试公共地址；随包的 32 个精选始终在本地。
 
